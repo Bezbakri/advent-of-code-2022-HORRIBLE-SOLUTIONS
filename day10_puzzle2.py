@@ -14,7 +14,7 @@ with open("input10") as f:
     curString = ""
     for instruction in instructions:
         cycle += 1
-        if cycle % 40 in range(x - 1, x + 2):
+        if (cycle -1) % 40 in range(x - 1, x + 2):
             curString += "#"
         else:
             curString += "."
@@ -25,7 +25,7 @@ with open("input10") as f:
             continue
         else:
             cycle += 1
-            if cycle % 40 in range(x - 1, x + 2):
+            if (cycle -1) % 40 in range(x - 1, x + 2):
                 curString += "#"
             else:
                 curString += "."
