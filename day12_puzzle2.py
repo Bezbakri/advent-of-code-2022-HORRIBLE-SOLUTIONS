@@ -5,8 +5,6 @@ Created on Mon Dec 12 00:31:16 2022
 @author: bezbakri
 """
 
-from collections import deque
-
 def parseInput(rawText : str) -> tuple:
     grid = [list(x) for x in rawText.split("\n")]
     aList = []
@@ -24,13 +22,12 @@ def parseInput(rawText : str) -> tuple:
     return grid, aList, endPos
 
 def distFinder(grid : list, start : tuple, end : tuple) -> int:
-    dumbList = deque()
+    dumbList = list()
     dumbList.append((start, 0))
     beenTo = set()
     while dumbList:
-        curPos, dist = dumbList.popleft()
+        curPos, dist = dumbList.pop(0)
         if curPos == end:
-            print(1)
             return dist
         if curPos in beenTo:
             continue 
